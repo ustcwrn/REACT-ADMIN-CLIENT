@@ -1,0 +1,19 @@
+.left-nav-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+img {
+    margin: 0 15PX;
+    width: 40px;
+    height: 40px;
+}
+
+h1 {
+    color: white;
+    font-size: 20px;
+}
+.ant-menu-title-content {
+    display: flex;
+}

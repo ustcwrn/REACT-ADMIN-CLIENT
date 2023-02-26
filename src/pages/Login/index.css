@@ -1,0 +1,43 @@
+.login {
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+    background-size: 100% 100%;
+}
+
+.login-header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background-color: brown;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+    margin: 0 15px 0 50px;
+}
+
+h1 {
+    font-size: 30px;
+    color: aliceblue;
+}
+
+.login-content {
+    background-color: #fff;
+    width: 400px;
+    height: 320px;
+    margin: 80px auto;
+    padding: 20px 40px;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+Button {
+    width: 80px;
+}
