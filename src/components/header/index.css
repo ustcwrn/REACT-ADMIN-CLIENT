@@ -1,8 +1,51 @@
 .header {
     height: 80px;
-    text-align: center;
     color: black;
-    line-height: 80px;
     background-color: #7dbcea,
 
+}
+.header-top {
+    height: 40px;
+    text-align: right;
+    line-height: 40px;
+    padding-right: 20px;
+    border-bottom: 1px white solid;
+}
+
+.header-top span {
+    margin-right: 10px;
+}
+.header-buttom {
+    height: 40px;
+    display: flex;
+}
+
+.header-buttom-left::after {
+    position: absolute;
+    content: '';
+    right: 50%;
+    top: 100%;
+    transform: translateX(50%);
+    border-top: 20px solid #7dbcea;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent;
+}
+.header-buttom-left {
+    width: 25%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 40px;
+    position: relative;
+}
+
+.header-buttom-right {
+    width: 75%;
+    text-align: right;
+    display: flex;
+    /* 垂直居中 */
+    align-items: center;
+    /* 水平向右 */
+    justify-content: flex-end;
+    padding-right: 20px;
 }
