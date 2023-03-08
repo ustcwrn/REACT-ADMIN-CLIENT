@@ -37,7 +37,7 @@ export const reqSearchWeather = async () => {
 export const reqCategorys = (parentId) => ajax('/manage/category/list', {parentId}, 'GET');
 
 //  添加分类
-export const reqAddCategorys = (categoryName, parentId) => ajax('/manage/category/add', {categoryName, parentId}, 'GET');
+export const reqAddCategorys = (categoryName, parentId) => ajax('/manage/category/add', {categoryName, parentId}, 'POST');
 
 //  更新分类
-export const reqUpdateCategorys = (categoryName, categoryId) => ajax('/manage/category/update', {categoryName, categoryId}, 'GET');
+export const reqUpdateCategorys = (categoryName, categoryId) => ajax('/manage/category/update', {categoryName, categoryId}, 'POST');
