@@ -33,7 +33,7 @@ function AddForm(props, ref) {
                 label="所属分类"
                 rules={[
                     {
-                        required: true,
+                        required: true, message: '请输入所属分类'
                     },
                 ]}
                 initialValue={parentId}
@@ -53,7 +53,7 @@ function AddForm(props, ref) {
                 label="分类名称"
                 rules={[
                     {
-                        required: true,
+                        required: true,message: '请输入分类名称'
                     },
                 ]}
             >

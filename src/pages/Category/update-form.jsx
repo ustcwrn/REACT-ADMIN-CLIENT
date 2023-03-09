@@ -22,9 +22,10 @@ const UpdateForm = React.forwardRef((props, ref) => {
             style={{
                 maxWidth: 600,
             }}
+            ref={ref} 
         >
             <Form.Item
-                name="note"
+                name="categoryName"
                 label="分类名称"
                 rules={[
                     {
@@ -34,7 +35,7 @@ const UpdateForm = React.forwardRef((props, ref) => {
                 ]}
                 initialValue={categoryName}
             >
-                <Input  placeholder='请输入分类名称' ref={ref} />
+                <Input  placeholder='请输入分类名称' />
             </Form.Item>
         </Form>
     )

@@ -88,13 +88,17 @@ export default function Category() {
   }
   // 添加分类
   const addCategory = async () => {
-    setShowStatus(0);
-    // 收集数据，并提交添加分类的请求
-    const { categoryName, parentId } = inputAddCategory.current.getFieldsValue();
-    const res = await reqAddCategorys(categoryName, parentId);
-    if (res.status === 0) {
-      getCategorys();
-    }
+    inputAddCategory.current.validateFields().then( async (value) => {
+      setShowStatus(0);
+      // 收集数据，并提交添加分类的请求
+      const { categoryName, parentId } = inputAddCategory.current.getFieldsValue();
+      const res = await reqAddCategorys(categoryName, parentId);
+      if (res.status === 0) {
+        getCategorys();
+      }
+    }).catch((err) => {
+      console.log(err);
+    })
   }
 
   // 显示修改的确认框
@@ -106,16 +110,20 @@ export default function Category() {
   }
 
   // 修改分类
-  const updateCategory = async () => {
-    // 隐藏确认框
-    setShowStatus(0);
-    // 准备数据
-    const categoryId = updateCategoryObj._id;
-    const categoryName = inputCategoryName.current.input.value;
-    const res = await reqUpdateCategorys(categoryName, categoryId);
-    if (res.status === 0) {
-      getCategorys();
-    }
+  const updateCategory = () => {
+    inputCategoryName.current.validateFields().then(async (values) => {
+      // 隐藏确认框
+      setShowStatus(0);
+      // 准备数据
+      const categoryId = updateCategoryObj._id;
+      const { categoryName } = values;
+      const res = await reqUpdateCategorys(categoryName, categoryId);
+      if (res.status === 0) {
+        getCategorys();
+      }
+    }).catch((err) => {
+      console.log(err);
+    })
   }
 
 
@@ -149,7 +157,7 @@ export default function Category() {
 
   useEffect(() => {
     getCategorys();
-  }, [parentId]);
+  }, []);
 
   // card右侧
   const extra = (

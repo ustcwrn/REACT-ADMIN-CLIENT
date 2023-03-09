@@ -58,14 +58,14 @@ export default function Admin() {
           <Routes>
             <Route path='/home' element={<Home />}></Route>
             <Route path='/category' element={<Category />}></Route>
-            <Route path='/product' element={<Product />}></Route>
+            <Route path='/product/*' element={<Product />}></Route>
             <Route path='/role' element={<Role />}></Route>
             <Route path='/user' element={<User />}></Route>
             <Route path='/charts/bar' element={<Bar />}></Route>
             <Route path='/charts/line' element={<Line />}></Route>
             <Route path='/charts/pie' element={<Pie />}></Route>
             {/* 重定向 */}
-            <Route path='/' element={<Navigate replace to='/home' />}></Route>
+            <Route path='/*' element={<Navigate replace to='/home' />}></Route>
           </Routes>
         </Content>
 

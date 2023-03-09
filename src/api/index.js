@@ -34,10 +34,17 @@ export const reqSearchWeather = async () => {
 }
 
 //  获取一级/二级分类列表
-export const reqCategorys = (parentId) => ajax('/manage/category/list', {parentId}, 'GET');
+export const reqCategorys = (parentId) => ajax('/manage/category/list', { parentId }, 'GET');
 
 //  添加分类
-export const reqAddCategorys = (categoryName, parentId) => ajax('/manage/category/add', {categoryName, parentId}, 'POST');
+export const reqAddCategorys = (categoryName, parentId) => ajax('/manage/category/add', { categoryName, parentId }, 'POST');
 
 //  更新分类
-export const reqUpdateCategorys = (categoryName, categoryId) => ajax('/manage/category/update', {categoryName, categoryId}, 'POST');
+export const reqUpdateCategorys = (categoryName, categoryId) => ajax('/manage/category/update', { categoryName, categoryId }, 'POST');
+
+
+// 获取商品分页列表 
+export const reqProducts = (pageNum, pageSize) => ajax('/manage/product/list', { pageNum, pageSize })
+
+// 搜索商品分页列表
+export const reqSearchProducts = (pageNum, pageSize, searchName, searchType) => ajax('/manage/product/search', { [searchType]: searchName, pageNum, pageSize })
