@@ -12,3 +12,6 @@
     border:1px solid #002140;
     margin-right: 10px;
 }
+.product-detail .ant-card-body {
+    padding-top: 10px !important;
+}

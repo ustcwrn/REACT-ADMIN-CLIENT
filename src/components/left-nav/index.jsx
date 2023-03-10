@@ -47,11 +47,15 @@ export default function LeftNav() {
 
   // 获取默认的openkeys
   let defaultOpenKeys = '';
-  
+  let path = location.pathname;
+  if (path.indexOf('/product') === 0) {
+    path = '/product'
+  }
+
   items.forEach(item => {
     if (item.children) {
       for (let child of item.children) {
-        if (child.key === location.pathname) {
+        if (path.indexOf(child.key) === 0) {
           defaultOpenKeys =  item.key;
         }
       }
@@ -66,7 +70,7 @@ export default function LeftNav() {
       </Link>
       <Menu
         defaultSelectedKeys={['/home']}
-        selectedKeys={[location.pathname]}
+        selectedKeys={[path]}
         defaultOpenKeys={[defaultOpenKeys]}
         mode="inline"
         theme="dark"

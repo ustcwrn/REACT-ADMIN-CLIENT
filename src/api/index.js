@@ -48,3 +48,10 @@ export const reqProducts = (pageNum, pageSize) => ajax('/manage/product/list', {
 
 // 搜索商品分页列表
 export const reqSearchProducts = (pageNum, pageSize, searchName, searchType) => ajax('/manage/product/search', { [searchType]: searchName, pageNum, pageSize })
+
+
+// 获取一个分类
+export const reqCategory = (categoryId) => ajax('/manage/category/info', {categoryId})
+
+// 更新商品的状态
+export const reqUpdateStatus = (productId, status) => ajax('/manage/product/updateStatus', {productId, status}, 'POST');

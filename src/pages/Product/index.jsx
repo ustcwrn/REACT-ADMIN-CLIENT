@@ -8,8 +8,9 @@ import ProductDetail from './detail';
 
 export default function Product() {
   return (
+    // 注册路由
     <Routes>
-      <Route path='/' element={<ProductHome />} />
+      <Route path='/' element={<ProductHome />}/>
       <Route path='/addupdate' element={<ProductAddUpdate />} />
       <Route path='/detail' element={<ProductDetail />} />
       {/* 重定向 */}
