@@ -70,3 +70,6 @@ export const reqAddRole = (roleName) => ajax('/manage/role/add', {roleName}, 'PO
 
 // 更新角色
 export const reqUpdateRole = (role) => ajax('/manage/role/update', role, 'POST');
+
+// 获取所有用户的列表
+export const reqUsers = () => ajax('/manage/user/list')
