@@ -51,7 +51,22 @@ export const reqSearchProducts = (pageNum, pageSize, searchName, searchType) => 
 
 
 // 获取一个分类
-export const reqCategory = (categoryId) => ajax('/manage/category/info', {categoryId})
+export const reqCategory = (categoryId) => ajax('/manage/category/info', { categoryId })
 
 // 更新商品的状态
-export const reqUpdateStatus = (productId, status) => ajax('/manage/product/updateStatus', {productId, status}, 'POST');
+export const reqUpdateStatus = (productId, status) => ajax('/manage/product/updateStatus', { productId, status }, 'POST');
+
+// 删除图片
+export const reqDeleteImg = (name) => ajax('/manage/img/delete', { name }, 'POST')
+
+// 添加/修改商品
+export const reqAddOrUpdateProduct = (product) => ajax('/manage/product/' + (product._id ? 'update' : 'add'), product, 'POST');
+
+// 获取所有角色的列表
+export const reqRoles = () => ajax('manage/role/list');
+
+// 添加角色
+export const reqAddRole = (roleName) => ajax('/manage/role/add', {roleName}, 'POST');
+
+// 更新角色
+export const reqUpdateRole = (role) => ajax('/manage/role/update', role, 'POST');

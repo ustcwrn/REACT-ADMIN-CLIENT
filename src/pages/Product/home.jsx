@@ -79,7 +79,7 @@ export default function ProductHome() {
                     return (
                         <span>
                             <Button type='link' onClick={() => navigate('/product/detail', { state: product })}>详情</Button>
-                            <Button type='link' onClick={123}>修改</Button>
+                            <Button type='link' onClick={() => navigate('/product/addupdate', {state: product})}>修改</Button>
                         </span>
                     )
                 },

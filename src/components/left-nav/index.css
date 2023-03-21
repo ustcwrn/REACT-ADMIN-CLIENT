@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-img {
+.left-nav-img {
     margin: 0 15PX;
     width: 40px;
     height: 40px;

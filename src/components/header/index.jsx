@@ -45,7 +45,7 @@ export default function Header() {
       if (item.key === path) {
         title = item.title;
       } else if (item.children) {
-        const child = item.children.find(item => item.key === path);
+        const child = item.children.find(item => path.indexOf(item.key) === 0);
         if (child) {
           title = child.title;
         }
@@ -104,7 +104,7 @@ export default function Header() {
         <div className='header-buttom-left'>{title}</div>
         <div className='header-buttom-right'>
           <span>{currentTime}</span>
-          <img src="https://weather.cma.cn/static/img/w/icon/w1.png" alt="weather" />
+          <img style={{width:'40px', margin:'10px'}} src="https://weather.cma.cn/static/img/w/icon/w1.png" alt="weather" />
           <span>{weather}</span>
         </div>
       </div>

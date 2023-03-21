@@ -2,3 +2,8 @@
     display: flex;
     align-items: center;
 }
+
+.left-nav-menu {
+    /* 侧边栏、内容区高度自适应 */
+    height: calc(100vh - 80px); /* 侧边栏高度 = 全屏容器高度 - 顶部高度  */
+}

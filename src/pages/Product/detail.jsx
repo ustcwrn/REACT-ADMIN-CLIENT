@@ -6,12 +6,13 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import './css/product.css'
 import { reqCategory } from '../../api'
+import { BASE_IMG_URL } from '../../utils/constants'
 export default function ProductDetail() {
     const [cName1, setCname1] = useState(''); // 一级分类名称
     const [cName2, setCname2] = useState(''); // 二级分类名称
     const navigate = useNavigate();
     const location = useLocation();
-    const { name, desc, price, detail } = location.state
+    const { name, desc, price, detail, imgs } = location.state
     const title = (
         <span>
             <Button type='link' onClick={() => navigate(-1)} style={{ width: 40 }}>
@@ -35,11 +36,15 @@ export default function ProductDetail() {
         </span>,
         <span>
             <span className='left'>所属分类：</span>
-            <span>{cName1+cName2}</span>
+            <span>{cName1 + '->' + cName2}</span>
         </span>,
         <span>
             <span className='left'>商品图片：</span>
-            <img src="https://wx1.sinaimg.cn/mw690/cfb6bb89ly1hbo1418u3hj21400u00xc.jpg" alt="" />
+            {
+                imgs.map(img => (
+                    <img key={img} src={BASE_IMG_URL + img} alt="img" />
+                ))
+            }
         </span>,
         <span style={{ display: 'flex' }}>
             <span className='left'>商品详情：</span>

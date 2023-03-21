@@ -15,3 +15,11 @@
 .product-detail .ant-card-body {
     padding-top: 10px !important;
 }
+.add-update-pictureswall {
+    display: flex;
+}
+
+.add-update-detail {
+    display: flex;
+    width: 1000px !important;
+}

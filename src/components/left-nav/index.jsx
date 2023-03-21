@@ -56,7 +56,7 @@ export default function LeftNav() {
     if (item.children) {
       for (let child of item.children) {
         if (path.indexOf(child.key) === 0) {
-          defaultOpenKeys =  item.key;
+          defaultOpenKeys = item.key;
         }
       }
     }
@@ -65,10 +65,11 @@ export default function LeftNav() {
   return (
     <div className='left-nav'>
       <Link className='left-nav-header '>
-        <img src={logo} alt="logo" />
+        <img className='left-nav-img' src={logo} alt="logo" />
         <h1>楠楠后台</h1>
       </Link>
       <Menu
+        className='left-nav-menu'
         defaultSelectedKeys={['/home']}
         selectedKeys={[path]}
         defaultOpenKeys={[defaultOpenKeys]}

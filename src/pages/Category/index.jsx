@@ -157,7 +157,7 @@ export default function Category() {
 
   useEffect(() => {
     getCategorys();
-  }, []);
+  }, [parentId]);
 
   // card右侧
   const extra = (

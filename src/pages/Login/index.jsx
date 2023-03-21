@@ -52,7 +52,7 @@ export default function Login() {
   return (
     <div className='login'>
       <header className='login-header'>
-        <img src={logo} alt="logo" />
+        <img className='login-header-img' src={logo} alt="logo" />
         <h1>React项目：后台管理系统</h1>
       </header>
       <section className='login-content'>
